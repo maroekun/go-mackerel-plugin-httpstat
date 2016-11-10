@@ -1,0 +1,19 @@
+language: go
+go:
+  - '1.7'
+before_deploy:
+  - $TRAVIS_BUILD_DIR/release-build.sh
+deploy:
+  provider: releases
+  api_key:
+    secure: oq/paoVsfVoxtEURgT70UwF7X5J/1ljESdSXfuHM1fV0LGmy+LSflNJKVwCKpD10jw/SoXqihGIiHx2xW1nlzcBCD/7g+OFBfCep1rjT/HCAHZ0V+IFXIm1j84++dkTsGAQHn52x+ZLe+21+85CCS9CrEr35FTyamxx1p2zgXR5Gq3BBNiG6UkCxvDpmlL6kE6hYq+QxG/fwwqjZBnX+oFy1fvfgpwiPJs6qaHyDRSBx6+MHKfuvoZMUMi67Jrtz44tznaNjwV+Ef4vD7BY08tLwYa7kN54sQ6qDavFZqpISyiJO3rLthFtfS76stnpsQG6VTdqrkfhTdpsEtuW+RebIEerqwQhhDnWFdNu5h8yjwqKoSKVSP6l6Im0GsFOaa7KpzVzcNwlgLBsEuRf2hINszMNt+Hq8m1TJDSeAm/cB7k59n9VtZTE+I+sr+sc4xq+M6VONYO1bWI0RbMkKO2GQDpFCsHYOTQV7b1L70uQwShMhOUpUGGfsVF3nDnErp3+5fc4TeATdSDScsNzsxwvSj+cBvXdMwK5j+f3NW39+Gnoqw/8OgQcRbSHUlS3lI/Wg6+UTUYrbJwLwQnS98VdyUcQ5RAD9/zhg5+TbbRmdYE9mIkBSlGXnapE7UnHaqfATOGbtJF5wNBE25kZsrHxfs7QNgOMSreagNl8Ulw4=
+  file:
+      - mackerel-plugin-httpstat.linux.arm
+      - mackerel-plugin-httpstat.linux.arm64
+      - mackerel-plugin-httpstat.linux.amd64
+      - mackerel-plugin-httpstat.darwin.amd64
+      - mackerel-plugin-httpstat.windows.amd64
+  file_glob: true
+  on:
+    tags: true
+    repo: ywatase/go-mackerel-plugin-httpstat
