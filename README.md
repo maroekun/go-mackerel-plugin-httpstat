@@ -15,3 +15,11 @@ mackerel-plugin-httpstat [-url=<url>] [-tempfile=<tempfile>]
 [plugin.metrics.httpstat]
 command = "/path/to/mackerel-plugin-httpstat -u https://example.com -metric-key-prefix=httpstat-example.com"
 ```
+
+## License
+
+This software is released under the MIT License, see LICENSE.
+
+## See Also
+
+* [golang httpstat implementation](https://github.com/davecheney/httpstat)

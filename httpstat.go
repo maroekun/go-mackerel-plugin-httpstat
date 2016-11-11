@@ -1,3 +1,12 @@
+/* mackerel-plugin-httpstat is mackarel metrics plugin of httpstat
+ using https://github.com/davecheney/httpstat as httpstat logic.
+ Thanks for davecheney.
+
+Copyright (c) 2016 Yusuke Watase
+
+This software is released under the MIT License.
+http://opensource.org/licenses/mit-license.php
+*/
 package main
 
 import (
