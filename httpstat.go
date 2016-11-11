@@ -57,7 +57,11 @@ type Plugin interface {
 }
 
 func (s HttpstatPlugin) GraphDefinition() map[string](mp.Graphs) {
-	labelPrefix := strings.Title(s.Prefix)
+	tmp := s.Prefix
+	if optUrl != "" {
+		tmp += " - " + optUrl
+	}
+	labelPrefix := strings.Title(tmp)
 	return map[string](mp.Graphs){
 		s.Prefix: mp.Graphs{
 			Label: labelPrefix,
