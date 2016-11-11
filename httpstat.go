@@ -72,6 +72,7 @@ func (s HttpstatPlugin) GraphDefinition() map[string](mp.Graphs) {
 				mp.Metrics{Name: "tls_handshake", Label: "TLS Handshake", Stacked: true, Type: "uint32"},
 				mp.Metrics{Name: "server_processing", Label: "Server Processing", Stacked: true, Type: "uint32"},
 				mp.Metrics{Name: "content_transfer", Label: "Content Transfer", Stacked: true, Type: "uint32"},
+				mp.Metrics{Name: "total", Label: "Total", Stacked: false, Type: "uint32"},
 			},
 		},
 	}
@@ -294,6 +295,7 @@ func visit(url *url.URL) (map[string]interface{}, error) {
 	stat["tls_handshake"] = fmta(t3.Sub(t2))
 	stat["server_processing"] = fmta(t4.Sub(t3))
 	stat["content_transfer"] = fmta(t5.Sub(t4))
+	stat["total"] = fmta(t5.Sub(t0))
 	return stat, nil
 }
 
